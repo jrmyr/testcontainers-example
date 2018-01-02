@@ -1,7 +1,0 @@
-FROM postgres:9.6
-
-ENV POSTGRES_USER=testuser
-ENV POSTGRES_PASSWORD=password
-ENV POSTGRES_DB=testdb
-
-EXPOSE 5432
