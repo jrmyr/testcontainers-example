@@ -4,6 +4,7 @@ import de.myrnet.tcexample.dal.model.Person;
 import de.myrnet.tcexample.dal.repo.PersonRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -23,6 +24,12 @@ public class PersonService {
                 .filter(n -> !"müller".equalsIgnoreCase(n.getLastname()))
                 .filter(n -> !"schmitz".equalsIgnoreCase(n.getLastname()))
                 .collect(Collectors.toList());
+    }
+
+    public List<Person> getAllPersons() {
+        List<Person> persons = new ArrayList<>();
+        personRepository.findAll().forEach(persons::add);
+        return persons;
     }
 
 }
