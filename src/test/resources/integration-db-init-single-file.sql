@@ -5,4 +5,8 @@ CREATE TABLE person (
 	CONSTRAINT person_pkey PRIMARY KEY (id)
 );
 
-COPY person FROM '/docker-entrypoint-initdb.d/dml_person.csv' DELIMITER ',' CSV HEADER;
+INSERT INTO person VALUES
+(101,'Hans','Schmidt'),
+(102,'Karl','Müller'),
+(103,'Gustav','Müllershausen'),
+(104,'Frank','Schmitz')
